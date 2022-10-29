@@ -1,6 +1,36 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 
+// Método para iniciar sesión
+const signin = async (req, res) => {
+  const { email, password } = req.body;
+
+  // Buscamos el correo electrónico del usuario en la BD
+  const user = await User.findOne({ email });
+
+  // Si el usuario no está registrado
+  if (!user)
+    return res.status(400).json({
+      msg: "Usuario no registrado.",
+    });
+  // Si el usuario está registrado, se verifica la contraseña
+  const match = user.comparePassword(password, user.password);
+
+  // Si la contraseña no coincide
+  if (!match)
+    return res.status(400).json({
+      msg: "Correo electrónico o contraseña incorrecta.",
+    });
+  // Si la contraseña coincide
+  const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+
+  res.status(200).json({
+    user,
+    token,
+    msg: "Usuario logeado exitosamente.",
+  });
+};
+
 // Método para registrar un usuario
 const signup = async (req, res) => {
   const { name, surname, email, password } = req.body;
@@ -33,5 +63,6 @@ const signup = async (req, res) => {
 };
 
 module.exports = {
+  signin,
   signup,
 };
