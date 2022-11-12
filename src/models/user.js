@@ -13,6 +13,9 @@ const UserSchema = new Schema(
       type: String,
       required: true,
     },
+    image: {
+      type: String,
+    },
     email: {
       type: String,
       unique: true,

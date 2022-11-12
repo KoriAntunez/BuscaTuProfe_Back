@@ -1,0 +1,237 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "BuscaTuProfe",
+    "description": "Las API para el proyecto BuscaTuProfe",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://virtserver.swaggerhub.com/KORIANTUNEZ_1/BuscaTuProfeAPI/1.0.0",
+      "description": "SwaggerHub API Auto Mocking"
+    },
+    {
+      "url": "https://test-buscatuprofe-znf3su46gq-ue.a.run.app",
+      "description": "API´s de BuscaTuProfe Test"
+    }
+  ],
+  "paths": {
+    "/api/auth/signin": {
+      "post": {
+        "tags": [
+          "Usuarios"
+        ],
+        "operationId": "Enviar al servidor el correo y la contraseña y validar las credenciales",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/auth_signin_body"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Usuario logeado exitosamente."
+          },
+          "400": {
+            "description": "Solicitud inválida"
+          }
+        }
+      }
+    },
+    "/api/auth/signup": {
+      "post": {
+        "tags": [
+          "Usuarios"
+        ],
+        "operationId": "Registrar nuevo usuario",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/auth_signup_body"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Ususario registrado exitosamente"
+          },
+          "400": {
+            "description": "Ususario no registrado"
+          }
+        }
+      }
+    },
+    "/api/users/{id}": {
+      "put": {
+        "tags": [
+          "EditarUsuarios"
+        ],
+        "operationId": "Editar usuario",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id de usuario",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/users_id_body"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Ususario registrado exitosamente"
+          },
+          "400": {
+            "description": "Ususario no registrado"
+          }
+        }
+      }
+    },
+    "/api/tutors/{id}": {
+      "post": {
+        "tags": [
+          "CrearTutor"
+        ],
+        "operationId": "Crear tutor",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id de usuario",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/tutors_id_body"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Tutor registrado exitosamente"
+          },
+          "400": {
+            "description": "Tutor no registrado"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "auth_signin_body": {
+        "required": [
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "auth_signup_body": {
+        "required": [
+          "userRegisters"
+        ],
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string"
+          },
+          "surname": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "users_id_body": {
+        "required": [
+          "userRegisters"
+        ],
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string"
+          },
+          "surname": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "tutors_id_body": {
+        "required": [
+          "userRegisters"
+        ],
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string"
+          },
+          "surname": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "biography": {
+            "type": "string"
+          },
+          "network": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
