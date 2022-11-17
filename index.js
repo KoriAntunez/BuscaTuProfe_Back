@@ -6,7 +6,7 @@ const express = require("express");
 const morgan = require("morgan");
 const path = require("path");
 
-const { mongoose } = require("./config/mongodb");
+const { mongoose } = require("./src/config/mongodb");
 
 const app = express();
 const whiteList = [process.env.HTTP];
@@ -29,8 +29,8 @@ app.use(express.urlencoded({ extended: false }));
 
 // Routes (Rutas)
 // ---------------------------------------------------------------
-app.use("/api/auth", require("./routes/auth.routes"));
-app.use("/api/users", require("./routes/user.routes"));
+app.use("/api/auth", require("./src/routes/auth.routes"));
+app.use("/api/users", require("./src/routes/user.routes"));
 
 // Static files (Archivos estáticos)
 // ---------------------------------------------------------------
