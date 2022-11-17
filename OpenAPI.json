@@ -11,7 +11,7 @@
       "description": "SwaggerHub API Auto Mocking"
     },
     {
-      "url": "https://test-buscatuprofe-znf3su46gq-ue.a.run.app",
+      "url": "https://busca-tu-profe-back-n6y9.vercel.app",
       "description": "API´s de BuscaTuProfe Test"
     }
   ],
@@ -99,10 +99,10 @@
         },
         "responses": {
           "200": {
-            "description": "Ususario registrado exitosamente"
+            "description": "Ususario actualizado exitosamente"
           },
           "400": {
-            "description": "Ususario no registrado"
+            "description": "Ususario no actualizado"
           }
         }
       }
@@ -225,9 +225,6 @@
             "type": "string"
           },
           "network": {
-            "type": "string"
-          },
-          "token": {
             "type": "string"
           }
         }
