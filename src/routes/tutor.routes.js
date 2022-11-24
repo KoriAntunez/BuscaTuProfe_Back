@@ -10,5 +10,7 @@ const TutorCtrl = require("../controllers/tutor.controller");
 router.post("/:id", verifyToken, TutorCtrl.createTutor);
 // Ruta para mostrar perfil de tutor
 router.get("/view/:id", TutorCtrl.viewTutor);
+// Ruta para listar todos los tutores
+router.get("/", TutorCtrl.listTutors);
 
 module.exports = router;
