@@ -14,8 +14,18 @@ const listServices = async (req, res) => {
     });
 };
 
+// Método para listar los servicios por tutor
+const listServicesByTutor = async (req, res) => {
+    // Obtenemos todos los servicios del tutor registrados
+    const services = await Service.find({ tutor_id: req.params.id });
 
+    res.status(200).json({
+        services,
+        msg: "Servicios cargados exitosamente."
+    });
+};
 
 module.exports = {
-    listServices
+    listServices,
+    listServicesByTutor
 }
