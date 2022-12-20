@@ -31,7 +31,8 @@ app.use(express.urlencoded({ extended: false }));
 // ---------------------------------------------------------------
 app.use("/api/auth", require("./src/routes/auth.routes"));
 app.use("/api/users", require("./src/routes/user.routes"));
-app.use('/api/services', require('./src/routes/service.routes'));
+app.use("/api/services", require("./src/routes/service.routes"));
+app.use("/api/tutors", require("./src/routes/tutor.routes"));
 
 // Static files (Archivos estáticos)
 // ---------------------------------------------------------------
