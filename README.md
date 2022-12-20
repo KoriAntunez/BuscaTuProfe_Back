@@ -19,13 +19,13 @@ npm install
 Cree el archivo `.env` y copie el siguiente contenido, luego complete las variables
 
 ```bash
-HTTP= "[Colocar URL del Front End]"
-MONGODB_URI="[colocar URL de Base de Datos]"
-JWT_SECRET=[123456]
+HTTP= [Colocar URL del Front End]
+MONGODB_URI=[colocar URL de Base de Datos]
+JWT_SECRET=[Configurar token, Ejemplo: 123456]
 SALT=[Número de bits del token, Ejemplo: 10]
-cloud_name="webaplicacionmobile"
-api_key="876862211587857"
-api_secret="oVbMSedCx-neUfBEHnlVfAwjgaM"
+cloud_name=[Nombre de cloud para despliegue de imagenes]
+api_key=[api_key de la cloud]
+api_secret=[api_secret de la cloud]
 ```
 
 Finalmente, para levantar el proyecto en su máquina local, ejecutar el siguiente comando en la misma dirección anterior:
