@@ -77,9 +77,28 @@ const uploadPhoto = async (req, res) => {
   });
 };
 
+// Método para borrar un servicio
+const deleteService = async (req, res) => {
+    // Buscamos el servicio a eliminar
+    const service = await Service.findByIdAndDelete(req.params.id);
+
+    // Si es que el servicio no existe
+    if (!service)
+        return res.status(400).json({
+            msg: "Servicio no existe."
+        });
+
+    res.status(200).json({
+        service,
+        msg: "Servicio eliminado exitosamente."
+    });
+};
+
+
 module.exports = {
   listServices,
   listServicesByTutor,
   createService,
   uploadPhoto,
+  deleteService
 };
