@@ -1,5 +1,10 @@
 # 📝 BACKEND: BuscaTuProfe
 
+## **Pre-requisitos**
+
+- Node.js 16.00 o version superior.
+- Cuenta Vercel(https://vercel.com/login).
+
 ## Instalación
 
 Clonar el presente repositorio en el directorio de su agrado con la siguiente línea de comando:
