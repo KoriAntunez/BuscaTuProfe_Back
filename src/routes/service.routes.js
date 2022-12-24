@@ -14,9 +14,9 @@ router.get("/", ServiceCtrl.listServices);
 router.get("/:id", ServiceCtrl.listServicesByTutor);
 
 // Ruta para crear un servicio
-router.post("/:id", verifyToken, ServiceCtrl.createService);
+router.post("/:id", ServiceCtrl.createService);
 
 // Ruta para subir la imagen del servicio
-router.put("/:id", verifyToken, uploadImage, ServiceCtrl.uploadPhoto);
+router.put("/:id", uploadImage, ServiceCtrl.uploadPhoto);
 
 module.exports = router;
