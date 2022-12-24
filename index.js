@@ -13,7 +13,7 @@ const whiteList = [process.env.HTTP];
 
 // Settings (Configuraciones)
 // ---------------------------------------------------------------
-app.set("port", process.env.PORT || 4000);
+app.set("port", process.env.PORT || 400);
 
 // Allow origin HTTP
 app.use(cors());
