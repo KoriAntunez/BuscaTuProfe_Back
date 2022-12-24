@@ -19,10 +19,10 @@ describe("Service Controller API", () => {
    * Test's the GET route /api/services
    */
   describe("List's all service's", () => {
-    it("It should GET /api/users", async function () {
+    it("It should GET /api/services", async function () {
       chai
         .request(server)
-        .get("/api/users")
+        .get("/api/services")
         .end((err, response) => {
           response.should.have.status(200);
         });

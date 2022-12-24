@@ -7,8 +7,8 @@ const { verifyToken } = require("../middlewares/verifyToken");
 const TutorCtrl = require("../controllers/tutor.controller");
 
 // Ruta para crear el perfil del tutor
-router.post("/:id", verifyToken, TutorCtrl.createTutor);
-// Ruta para mostrar perfil de tutor
+router.post("/:id", TutorCtrl.createTutor);
+// Ruta para buscar perfil de tutor
 router.get("/view/:id", TutorCtrl.viewTutor);
 // Ruta para listar todos los tutores
 router.get("/", TutorCtrl.listTutors);
