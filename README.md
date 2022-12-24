@@ -1,5 +1,10 @@
 # 📝 BACKEND: BuscaTuProfe
 
+## **Pre-requisitos**
+
+- Node.js 16.00 o version superior.
+- Cuenta Vercel(https://vercel.com/login).
+
 ## Instalación
 
 Clonar el presente repositorio en el directorio de su agrado con la siguiente línea de comando:
@@ -41,3 +46,23 @@ Es necesario tener previamente instalado los siguientes programas para seguir la
 [![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com) Para ejecutar los comandos de `git`
 
 [![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/es/) Para ejecutar los comandos de `npm`
+
+## Test
+
+Deberás ejecutar los siguientes comandos para poder ejecutar las pruebas
+
+```
+npm install chai--save-dev
+```
+
+```
+npm install chai-http--save-dev
+```
+
+```
+npm install mocha--save-dev
+```
+
+```
+npm test
+```
