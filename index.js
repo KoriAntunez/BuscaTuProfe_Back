@@ -1,5 +1,6 @@
 // Environment Variables (Variables de entorno)
 require("dotenv").config();
+const config = require("./src/config/config");
 
 const cors = require("cors");
 const express = require("express");
@@ -37,6 +38,8 @@ app.use("/api/tutors", require("./src/routes/tutor.routes"));
 // Static files (Archivos estáticos)
 // ---------------------------------------------------------------
 app.use(express.static(path.join(__dirname, "public")));
+// Para ver el entorno de configuración
+console.log(`NODE_ENV=${config.NODE_ENV}`);
 
 // Starting the server (Iniciando el servidor)
 // ---------------------------------------------------------------
