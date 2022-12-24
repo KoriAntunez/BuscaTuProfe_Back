@@ -14,7 +14,7 @@ var test_email = "rash.fernandez@gmail.com";
 var test_password = "rashFer123";
 
 
-describe("Service Controller API", () => {
+describe("User Controller API", () => {
   /**
    * Test's the GET route /api/services
    */
