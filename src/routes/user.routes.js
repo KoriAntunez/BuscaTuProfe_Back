@@ -9,6 +9,6 @@ const UserCtrl = require('../controllers/user.controller');
 // Método para listar los datos del usuario
 router.get('/', UserCtrl.listUsers);
 // Método para actualizar datos del usuario
-router.put('/:id', UserCtrl.updateUser);
+router.put('/:id', verifyToken, UserCtrl.updateUser);
 
 module.exports = router;
