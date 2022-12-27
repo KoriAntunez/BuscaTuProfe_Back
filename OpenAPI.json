@@ -370,13 +370,10 @@
           "description": {
             "type": "string"
           },
-          "image": {
-            "type": "string"
-          },
           "price": {
             "type": "string"
           },
-          "quanty_max": {
+          "quantity_max": {
             "type": "string"
           },
           "tutor_id": {
